@@ -77,7 +77,7 @@ namespace AzureCustomerTable
             string customerFirstName = "Sjaak";
 
             Customer customerEntity = await RetrieveRecord(table, customerID, customerLastName + customerFirstName);
-            if (customerEntity != null)
+            if (customerEntity is not null)
             {
                 customerEntity.customerFirstName = "Peters";
                 TableOperation tableOperation = TableOperation.Replace(customerEntity);
@@ -91,7 +91,7 @@ namespace AzureCustomerTable
             string customerFirstName = "Sjaak";
 
             Customer customerEntity = await RetrieveRecord(table, customerID, customerLastName + customerFirstName);
-            if (customerEntity != null)
+            if (customerEntity is not null)
             {
                 TableOperation tableOperation = TableOperation.Delete(customerEntity);
                 var result = await table.ExecuteAsync(tableOperation);
