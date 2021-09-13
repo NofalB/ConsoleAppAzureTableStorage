@@ -103,5 +103,6 @@ namespace AzureCustomerTable
             TableResult tableResult = await table.ExecuteAsync(tableOperation);
             return tableResult.Result as Customer;
         }
+
     }
 }
